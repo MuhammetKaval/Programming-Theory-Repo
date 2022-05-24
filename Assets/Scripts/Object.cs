@@ -51,4 +51,9 @@ public class Object : MonoBehaviour
         float randomTorqueValueZ = Random.Range(-maxTorque, maxTorque);
         rigidbody.AddTorque(randomTorqueValueX, randomTorqueValueY, randomTorqueValueZ, ForceMode.Impulse);
     }
+
+    private void OnMouseDown()
+    {
+        Destroy(gameObject);
+    }
 }
