@@ -16,12 +16,13 @@ public class TitleUIHandler : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            StartNew();
+            StartNewGame();
         }
     }
 
-    public void StartNew()
+    public void StartNewGame()
     {
         SceneManager.LoadScene(1);
+        GameManager.Instance.StartGame();
     }
 }

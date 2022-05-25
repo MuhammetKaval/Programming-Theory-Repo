@@ -109,12 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcc7f2f26b641234abf1884d8d31f179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPosY: -6
-  xRange: 12
-  minSpeed: 12
-  maxSpeed: 16
-  maxTorque: 10
-  yRange: -8
+  scorePoint: 20
 --- !u!54 &4148191429632797019
 Rigidbody:
   m_ObjectHideFlags: 0

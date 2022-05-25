@@ -2,16 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//[RequireComponent(typeof(Rigidbody))]
+
+// Base class for all Fruit and Bomb class. It will Throw up object when Instantiate
+// It require a Rigidbody to Throw up the object.
+[RequireComponent(typeof(Rigidbody))]
 
 public class Object : MonoBehaviour
+
+// INHERITANCE
 {
-    public float spawnPosY = -6;
-    public float xRange = 12;
-    public float minSpeed = 12.0f;
-    public float maxSpeed = 16.0f;
-    public float maxTorque = 10.0f;
-    public float yRange = -8;
+    protected float spawnPosY = -6;
+    protected float xRange = 12;
+    protected float minSpeed = 12.0f;
+    protected float maxSpeed = 16.0f;
+    protected float maxTorque = 10.0f;
+    protected float yRange = -8;
     new Rigidbody rigidbody;
 
     // Start is called before the first frame update
@@ -22,6 +27,7 @@ public class Object : MonoBehaviour
 
     void Start()
     {
+        // ABSTRACTION
         ThrowUp();
     }
 
@@ -36,6 +42,7 @@ public class Object : MonoBehaviour
 
     public void ThrowUp()
     {
+        // ABSTRACTION
         SetRandomPosition();
         AddRandomForce();
         AddRandomTorque();
@@ -61,12 +68,14 @@ public class Object : MonoBehaviour
         rigidbody.AddTorque(randomTorqueValueX, randomTorqueValueY, randomTorqueValueZ, ForceMode.Impulse);
     }
 
+    // POLYMORPHISM
     // Destroy gameObject when clicked;
-    private void OnMouseDown()
+    public virtual void OnMouseDown()
     {
         Destroy(gameObject);
     }
 
+    // POLYMORPHISM
     public virtual void CheckBottomBoundary()
     {
         Destroy(gameObject);
