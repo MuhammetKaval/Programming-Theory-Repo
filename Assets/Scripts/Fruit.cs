@@ -10,11 +10,8 @@ public class Fruit : Object
     // POLYMORPHISM
     public override void CheckBottomBoundary()
     {
-        if (GameManager.Instance.isGameActive)
-        {
-            GameOver(); // ABSTRACTION
-            base.CheckBottomBoundary();
-        }
+        GameOver(); // ABSTRACTION
+        base.CheckBottomBoundary();
     }
 
     // POLYMORPHISM
