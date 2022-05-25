@@ -28,7 +28,10 @@ public class Object : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckBottomBoundary();
+        if (transform.position.y < yRange)
+        {
+            CheckBottomBoundary();
+        }
     }
 
     public void ThrowUp()
@@ -66,9 +69,6 @@ public class Object : MonoBehaviour
 
     public virtual void CheckBottomBoundary()
     {
-        if(transform.position.y < yRange)
-        {
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
 }
